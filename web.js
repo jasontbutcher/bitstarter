@@ -4,8 +4,9 @@ var fs = require("fs");
 var app = express.createServer(express.logger());
 
 app.get('/', function(request, response) {
+  //create the contents by reading index.hmtl
   var buf = fs.readFileSync("index.html");
-  response.send(buf.ToString());
+  response.send(buf.toString());
 });
 
 var port = process.env.PORT || 5000;
