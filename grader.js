@@ -20,8 +20,9 @@ References:
    - https://developer.mozilla.org/en-US/docs/JSON
    - https://developer.mozilla.org/en-US/docs/JSON#JSON_in_Firefox_2
 */
-
+var util = require('util');
 var fs = require('fs');
+var rest = require("restler");
 var program = require('commander');
 var cheerio = require('cheerio');
 var HTMLFILE_DEFAULT = "index.html";
@@ -66,6 +67,27 @@ var clone = function(fn) {
     // http://stackoverflow.com/a/6772648
     return fn.bind({});
 };
+var buildfn = function(){
+    var responseHandler = function(result, response) {
+	if (result instanceof Error){
+	    console.error('Error:' + util.format(response.message));
+	}
+	else {
+	    fs.writeFileSync('temp.html',result);
+	}
+    };
+
+    return responseHandler;
+
+}
+
+var getFileFromURL= function(url) {
+    //get the file from via Restler
+    var apiurl = url;
+    var responseHandler = buildfn();
+    rest.get(apiurl).on('complete',responseHandler);
+}
+
 
 if(require.main == module) {
     program
@@ -73,7 +95,13 @@ if(require.main == module) {
         .option('-c, --checks <check_file>', 'Path to checks.json', clone(assertFileExists), CHECKSFILE_DEFAULT)
         .option('-u, --url <url_to_html_file>','URL to index.html', clone(assertUrlExists), URLFILE_DEFAULT)
         .parse(process.argv);
-    var checkJson = checkHtmlFile(program.file, program.checks);
+    if program.url {
+	getFileFromURL(program.url);
+        var checkJson = checkHtmlFile('temp.html',program.checks);
+    }
+    else{
+	var checkJson = checkHtmlFile(program.file, program.checks);
+    }    
     var outJson = JSON.stringify(checkJson, null, 4);
     console.log(outJson);
 } else {
