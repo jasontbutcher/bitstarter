@@ -28,5 +28,6 @@ $ rbenv install [VERSION]
 $ yum groupinstall “Development Tools"
 
 $ yum install gcc
+sudo yum install -y openssl-devel readline-devel zlib-devel
 
 $ rbenv global [VERSION]
