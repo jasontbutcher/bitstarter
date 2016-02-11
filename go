@@ -25,4 +25,7 @@ $ rbenv install -l
 $ rbenv install [VERSION]
 [time passes...]
 
+
+$ yum install gcc
+
 $ rbenv global [VERSION]
