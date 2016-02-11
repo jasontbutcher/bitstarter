@@ -31,3 +31,5 @@ $ yum install gcc
 sudo yum install -y openssl-devel readline-devel zlib-devel
 
 $ rbenv global [VERSION]
+
+rbenv install 2.2.3
