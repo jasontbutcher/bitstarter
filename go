@@ -25,6 +25,7 @@ $ rbenv install -l
 $ rbenv install [VERSION]
 [time passes...]
 
+$ yum groupinstall “Development Tools"
 
 $ yum install gcc
 
