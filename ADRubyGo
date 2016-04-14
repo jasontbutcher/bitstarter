@@ -6,4 +6,7 @@ git pull
 git clone https://github.com/sstephenson/ruby-build.git \
   $RBENV_ROOT/plugins/ruby-build
 rbenv rehash
-rbenv install 2.1.5
+rbenv install 2.2.3 -- instead 2.1.5
+cd ~
+cd hub
+./go init
