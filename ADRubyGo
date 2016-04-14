@@ -11,3 +11,4 @@ cd ~
 git clone https://github.com/jasontbutcher/hub
 cd hub
 ./go init
+./go serve
