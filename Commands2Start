@@ -6,7 +6,7 @@ git config --global user.name "Jason Butcher"
 git config --global user.email "jason@butcherville.com"
 git clone https://github.com/jasontbutcher/bitstarter
 
-./bitstarter AD
+./bitstarter ADStart
 
 Then exit and run
-./bitstarter AD
+./bitstarter ADRubyGo
