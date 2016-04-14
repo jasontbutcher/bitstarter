@@ -1,0 +1,15 @@
+sudo yum update
+sudo yum install git
+git config --global user.name "Jason Butcher"
+git config --global user.email "jason@butcherville.com"
+git clone https://github.com/jasontbutcher/hub
+
+
+export RBENV_ROOT=/usr/local/rbenv
+sudo mkdir $RBENV_ROOT
+sudo chown $USER $RBENV_ROOT
+git clone https://github.com/sstephenson/rbenv.git $RBENV_ROOT
+echo 'export RBENV_ROOT=/usr/local/rbenv' >> ~/.bashrc
+echo 'export PATH="$RBENV_ROOT/bin:$PATH"' >> ~/.bashrc
+echo 'eval "$(rbenv init -)"' >> ~/.bashrc
+[log out...]
