@@ -8,5 +8,6 @@ git clone https://github.com/sstephenson/ruby-build.git \
 rbenv rehash
 rbenv install 2.2.3 -- instead 2.1.5
 cd ~
+git clone https://github.com/jasontbutcher/hub
 cd hub
 ./go init
