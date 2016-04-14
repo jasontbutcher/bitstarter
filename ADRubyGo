@@ -1,4 +1,4 @@
-sudo yum groupinstall “Development Tools"
+sudo yum groupinstall "Development Tools"
 sudo yum install gcc
 sudo yum install -y openssl-devel readline-devel zlib-devel
 cd $RBENV_ROOT
