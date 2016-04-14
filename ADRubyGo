@@ -1,12 +1,9 @@
+sudo yum groupinstall “Development Tools"
+sudo yum install gcc
+sudo yum install -y openssl-devel readline-devel zlib-devel
 cd $RBENV_ROOT
 git pull
 git clone https://github.com/sstephenson/ruby-build.git \
   $RBENV_ROOT/plugins/ruby-build
 rbenv rehash
-rbenv install -l
 rbenv isntall 2.1.5
-yum groupinstall “Development Tools"
-yum install gcc
-sudo yum install -y openssl-devel readline-devel zlib-devel
-
-$ rbenv global [VERSION]
