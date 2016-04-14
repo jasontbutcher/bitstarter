@@ -1,3 +1,4 @@
+#! /usr/bin/env ruby
 export RBENV_ROOT=/usr/local/rbenv
 sudo mkdir $RBENV_ROOT
 sudo chown $USER $RBENV_ROOT
