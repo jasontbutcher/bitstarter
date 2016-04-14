@@ -1,5 +1,8 @@
 Type these in by hand:
 
+ssh -i "Autonomy.pem" ec2-user@IPADDRESS
+
+
 sudo yum update
 sudo yum install git
 git config --global user.name "Jason Butcher"
